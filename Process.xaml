@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>920,1203.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>688.8,980</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -75,7 +75,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="538.4,1138.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="538.4,915.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="sourceID" />
       <Variable x:TypeArguments="x:String" Name="source" />
@@ -136,7 +136,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[source]" sap:VirtualizedContainerService.HintSize="496.8,593.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[source]" sap:VirtualizedContainerService.HintSize="496.8,370.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Sequence x:Key="jobstreet" sap:VirtualizedContainerService.HintSize="375.2,360" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -149,17 +149,11 @@
             <InArgument x:TypeArguments="x:String" x:Key="in_JobID">[sourceID]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TagApplicant workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\TagApplicant.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TagApplicant2 workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\TagApplicant2.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_Name">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="name" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tag" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_TransactionNumber" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_Name">[name]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_Tag">[tag]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
@@ -177,28 +171,26 @@
         </ui:InvokeWorkflowFile>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TagApplicant workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Indeed\TagApplicant.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tag" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_TransactionNumber" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_Tag">[tag]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="facebook" DisplayName="Invoke TagApplicant workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Facebook\TagApplicant.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Name">
+          <InArgument x:TypeArguments="x:String" x:Key="in_Name">[name]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Tag">[tag]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Position">[positionTitle]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="website" DisplayName="Invoke PutNonTaggedCandidateToFolder workflow" sap:VirtualizedContainerService.HintSize="357.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Helpers\PutNonTaggedCandidateToFolder.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Source">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="source" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ApplicantName">
             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="name" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tag" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Position">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="positionTitle" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_TransactionNumber" />
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
