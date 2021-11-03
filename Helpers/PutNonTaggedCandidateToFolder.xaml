@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>724,1736.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1133.6,1890.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PutNonTaggedCandidateToFolder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -77,11 +77,11 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PutNonTaggedCandidateToFolder" sap:VirtualizedContainerService.HintSize="524.8,1672" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PutNonTaggedCandidateToFolder" sap:VirtualizedContainerService.HintSize="524.8,1825.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="taggedApplicantsLocation" />
       <Variable x:TypeArguments="x:String" Name="masterListLocation" />
@@ -95,9 +95,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetMasterListLocation workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Helpers\GetMasterListLocation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_MasterListLocation">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="masterListLocation" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_MasterListLocation">[masterListLocation]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ReadCellFormula Cell="[&quot;A&quot; +( in_TransactionNumber + 1).ToString]" DisplayName="Read Resume path" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="ReadCellFormula_1" Result="[resumePath]" SheetName="Master List" WorkbookPath="[masterListLocation]" />
@@ -126,9 +124,7 @@
     </Assign>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateFolderIfNotExists workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Helpers\CreateFolderIfNotExists.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Directory">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="applicantFolderPath" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Directory">[applicantFolderPath]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <If Condition="[File.Exists(resumePath)]" sap:VirtualizedContainerService.HintSize="483.2,532" sap2010:WorkflowViewState.IdRef="If_1">
@@ -163,5 +159,15 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CreateWorksheetFile workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Helpers\CreateWorksheetFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ApplicantName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ApplicantName" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ApplicantPath">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="applicantFolderPath" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

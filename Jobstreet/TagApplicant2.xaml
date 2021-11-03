@@ -1,13 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TagApplicant2" this:TagApplicant2.in_Name="Jeric Sam Cayanan" this:TagApplicant2.in_Tag="Maybe" this:TagApplicant2.in_TransactionNumber="1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TagApplicant2" this:TagApplicant2.in_Name="Jeric Sam Cayanan" this:TagApplicant2.in_Tag="Maybe" this:TagApplicant2.in_TransactionNumber="1" this:TagApplicant2.in_Test="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Name" Type="InArgument(x:String)" />
     <x:Property Name="in_Tag" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_Test" Type="InArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>833.6,3413.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>833.6,3526.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TagApplicant2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -73,19 +74,19 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TagApplicant2" sap:VirtualizedContainerService.HintSize="844,3348.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TagApplicant2" sap:VirtualizedContainerService.HintSize="844,3461.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SiVA'" sap:VirtualizedContainerService.HintSize="802.4,3256" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="26616cb30b7bfdaed6624378de70dec6" Selector="&lt;html app='chrome.exe' title='*SiVA Recruitment Centre*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SiVA'" sap:VirtualizedContainerService.HintSize="802.4,3368.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="26616cb30b7bfdaed6624378de70dec6" Selector="&lt;html app='chrome.exe' title='*SiVA Recruitment Centre*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768.8,3108.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768.8,3221.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="isDone" />
             </Sequence.Variables>
@@ -115,9 +116,9 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:InterruptibleWhile Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="727.2,2798.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="727.2,2911.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="692,2631.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="692,2744" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Default="1" Name="ctr" />
                     <Variable x:TypeArguments="ui:UiElement" Name="linkNext" />
@@ -135,9 +136,9 @@
                       <InArgument x:TypeArguments="x:Int32">1</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InterruptibleWhile Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="650.4,1631.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                  <ui:InterruptibleWhile Condition="True" DisplayName="While" sap:VirtualizedContainerService.HintSize="650.4,1744" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="615.2,1464" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="615.2,1576.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="applicantName" />
                         </Sequence.Variables>
@@ -146,7 +147,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="573.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="573.6,300" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Try>
                             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get applicant name" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
                               <ui:GetValue.Target>
@@ -162,7 +163,7 @@
                             </ui:GetValue>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -233,6 +234,9 @@
                                     <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
                                       <Literal x:TypeArguments="x:String">Interested</Literal>
                                     </InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
+                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
+                                    </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Maybe" DisplayName="Invoke ProcessTagging workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\ProcessTagging.xaml">
@@ -246,6 +250,9 @@
                                     <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
                                       <Literal x:TypeArguments="x:String">Maybe</Literal>
                                     </InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
+                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
+                                    </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Rejected" DisplayName="Invoke ProcessTagging workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\ProcessTagging.xaml">
@@ -258,6 +265,9 @@
                                     </InArgument>
                                     <InArgument x:TypeArguments="x:String" x:Key="in_Tag">
                                       <Literal x:TypeArguments="x:String">Rejected</Literal>
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
+                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
                                     </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
