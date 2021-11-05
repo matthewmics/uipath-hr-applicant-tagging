@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>749.6,2044</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>852.8,2172</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PutNonTaggedCandidateToFolder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,15 +78,15 @@
       <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PutNonTaggedCandidateToFolder" sap:VirtualizedContainerService.HintSize="524.8,1979.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PutNonTaggedCandidateToFolder" sap:VirtualizedContainerService.HintSize="524.8,2107.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="taggedApplicantsLocation" />
       <Variable x:TypeArguments="x:String" Name="masterListLocation" />
       <Variable x:TypeArguments="x:String" Name="resumePath" />
       <Variable x:TypeArguments="x:String" Name="applicantFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="downloadedResumePath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,9 +99,19 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:ReadCellFormula Cell="[&quot;A&quot; +( in_TransactionNumber + 1).ToString]" DisplayName="Read Resume path" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="ReadCellFormula_1" Result="[resumePath]" SheetName="Master List" WorkbookPath="[masterListLocation]" />
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="resumePath = resumePath.Replace(&quot;HYPERLINK(&quot;&quot;&quot;, &quot;&quot;).Replace(&quot;&quot;&quot;,&quot;&quot;Resume&quot;&quot;)&quot;, &quot;&quot;)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="483.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:ReadCell Cell="[&quot;W&quot; +( in_TransactionNumber + 1).ToString]" DisplayName="Read resume path" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="Master List" WorkbookPath="[masterListLocation]">
+      <ui:ReadCell.Result>
+        <OutArgument x:TypeArguments="x:String">[downloadedResumePath]</OutArgument>
+      </ui:ReadCell.Result>
+    </ui:ReadCell>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="'resumePath = resumePath.Replace(&quot;HYPERLINK(&quot;&quot;&quot;, &quot;&quot;).Replace(&quot;&quot;&quot;,&quot;&quot;Resume&quot;&quot;)&quot;, &quot;&quot;)&#xD;&#xA;resumePath = downloadedResumePath" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="483.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
-        <InOutArgument x:TypeArguments="x:String" x:Key="resumePath">[resumePath]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="resumePath">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="resumePath" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="downloadedResumePath">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="downloadedResumePath" />
+        </InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetTaggedApplicantsLocation workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Helpers\GetTaggedApplicantsLocation.xaml">
@@ -167,15 +177,9 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UploadCandidateFolder workflow" sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Sharepoint\UploadCandidateFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(taggedApplicantsLocation, in_Source)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FolderName">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ApplicantName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Source">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Source.ToLower" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[Path.Combine(taggedApplicantsLocation, in_Source)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FolderName">[in_ApplicantName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Source.ToLower]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

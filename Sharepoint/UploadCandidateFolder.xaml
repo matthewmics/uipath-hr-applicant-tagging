@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>749.6,2313.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>852.8,2193.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadCandidateFolder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -73,19 +73,19 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadCandidateFolder" sap:VirtualizedContainerService.HintSize="613.6,2248.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadCandidateFolder" sap:VirtualizedContainerService.HintSize="613.6,2128.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe RPA'" sap:VirtualizedContainerService.HintSize="572,2156" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4e1ef5dc106a960a2f1c69797e4f86a1" Selector="&lt;html app='chrome.exe' htmlwindowname='{}' title='* - OneDrive' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe RPA'" sap:VirtualizedContainerService.HintSize="572,2036" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4e1ef5dc106a960a2f1c69797e4f86a1" Selector="&lt;html app='chrome.exe' htmlwindowname='{}' title='* - OneDrive' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538.4,2008.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="538.4,1848.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,7 +103,7 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Source]" sap:VirtualizedContainerService.HintSize="496.8,370.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Source]" sap:VirtualizedContainerService.HintSize="496.8,210.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="interested" DisplayName="Invoke NavigateToInterested workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Sharepoint\NavigateToInterested.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -147,7 +147,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Wait modal" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Wait modal" sap:VirtualizedContainerService.HintSize="496.8,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="112cdfd6-8fd0-4e61-81b8-9ce25c6add91" Selector="&lt;webctrl css-selector='.ms-Layer.ms-Layer--fixed' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -159,7 +159,7 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DisplayName="Click upload folder" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DisplayName="Click upload folder" sap:VirtualizedContainerService.HintSize="496.8,68.8" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -181,7 +181,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click this pc" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click this pc" sap:VirtualizedContainerService.HintSize="496.8,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -203,7 +203,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click explorer address" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click explorer address" sap:VirtualizedContainerService.HintSize="496.8,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -225,7 +225,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DelayBetweenKeys="5" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[in_FolderPath + &quot;[k(enter)]&quot;]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DelayBetweenKeys="5" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="496.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[in_FolderPath + &quot;[k(enter)]&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="03476628-97aa-476b-a58a-8428e9161be0" InformativeScreenshot="3b2f2598bab4e2abb805891a216fe6cd" Selector="&lt;wnd app='chrome.exe' title='Select Folder to Upload' /&gt;&lt;wnd ctrlid='41477' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -237,7 +237,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type folder name" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_FolderName]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type folder name" sap:VirtualizedContainerService.HintSize="496.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_FolderName]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="efb259e1-7ef5-465c-90e3-a352f6e7cc4b" InformativeScreenshot="71c3e9ff16fa85be57ef4b79b46acdd6" Selector="&lt;wnd app='chrome.exe' title='Select Folder to Upload' /&gt;&lt;wnd ctrlid='1152' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -249,7 +249,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click upload button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click upload button" sap:VirtualizedContainerService.HintSize="496.8,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -271,7 +271,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="1500" DisplayName="Click 'push button  Upload'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayBefore="1500" DisplayName="Click 'push button  Upload'" sap:VirtualizedContainerService.HintSize="496.8,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -283,7 +283,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b216fbf-70fa-41f4-9669-03dd6994b5d1" InformativeScreenshot="fb79ac79562c57fa9e99327c202ed09f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='* - OneDrive - *' /&gt;&lt;ctrl name='Upload one file to this site?' role='dialog' /&gt;&lt;ctrl name='Upload' role='push button' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b216fbf-70fa-41f4-9669-03dd6994b5d1" InformativeScreenshot="fb79ac79562c57fa9e99327c202ed09f" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' /&gt;&lt;ctrl name='Upload * to this site?' role='dialog' /&gt;&lt;ctrl name='Upload' role='push button' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -293,7 +293,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Wait callout" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Wait callout" sap:VirtualizedContainerService.HintSize="496.8,68.8" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="112cdfd6-8fd0-4e61-81b8-9ce25c6add91" Selector="&lt;webctrl css-selector='div.ms-Callout[aria-live=assertive]' /&gt;" TimeoutMS="[Convert.ToInt32(Timespan.FromMinutes(5).TotalMilliseconds)]">
                   <ui:Target.WaitForReady>
@@ -302,7 +302,7 @@
                 </ui:Target>
               </ui:WaitUiElementAppear.Target>
             </ui:WaitUiElementAppear>
-            <Delay Duration="[Timespan.FromSeconds(1)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <Delay Duration="[Timespan.FromSeconds(1)]" sap:VirtualizedContainerService.HintSize="496.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
