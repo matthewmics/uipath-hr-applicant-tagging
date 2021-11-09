@@ -3,6 +3,7 @@
   "description": "A process that tags applicants from different sources such as Indeed and Jobstreet",
   "main": "Main.xaml",
   "dependencies": {
+    "SQLiteDatabaseForUiPath": "[1.0.17]",
     "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.11.0-preview]",
     "UiPath.Mail.Activities": "[1.10.5]",
