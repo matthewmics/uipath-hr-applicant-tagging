@@ -4,11 +4,12 @@
     <x:Property Name="in_Tag" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="in_Test" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_MasterlistLocation" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>833.6,3526.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1093.6,3526.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TagApplicant2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -237,6 +238,9 @@
                                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
                                       <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
                                     </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_MasterlistLocation">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MasterlistLocation" />
+                                    </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Maybe" DisplayName="Invoke ProcessTagging workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\ProcessTagging.xaml">
@@ -253,6 +257,9 @@
                                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
                                       <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
                                     </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_MasterlistLocation">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MasterlistLocation" />
+                                    </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="Rejected" DisplayName="Invoke ProcessTagging workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Jobstreet\ProcessTagging.xaml">
@@ -268,6 +275,9 @@
                                     </InArgument>
                                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_Test">
                                       <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Test" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_MasterlistLocation">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MasterlistLocation" />
                                     </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
